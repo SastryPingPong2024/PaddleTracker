@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from ultralytics import YOLO
 
 def process_frame(frame, model):
-    model_output = model(frame)[0]
+    model_output = model(frame, verbose=False)[0]
     detections = []
     for box in model_output.boxes:
         c = box.conf[0]
